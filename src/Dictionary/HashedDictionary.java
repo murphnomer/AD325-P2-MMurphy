@@ -6,17 +6,17 @@ import java.util.NoSuchElementException;
 public class HashedDictionary<K, V> implements DictionaryInterface<K, V>
 {
     // The dictionary:
-    private int numberOfEntries;
-    private static final int DEFAULT_CAPACITY = 5;        // Must be prime
-    private static final int MAX_CAPACITY = 10000;
+    protected int numberOfEntries;
+    protected static final int DEFAULT_CAPACITY = 5;        // Must be prime
+    protected static final int MAX_CAPACITY = 10000;
 
     // The hash table:
-    private Entry<K, V>[] hashTable;
-    private int tableSize;                                // Must be prime
-    private static final int MAX_SIZE = 2 * MAX_CAPACITY; // Max size of hash table
-    private boolean integrityOK = false;
-    private static final double MAX_LOAD_FACTOR = 0.5;    // Fraction of hash table that can be filled
-    private final Entry<K, V> AVAILABLE = new Entry<>(null, null); // Occupies locations in the hash table in the available state (locations whose entries were removed)
+    protected Entry<K, V>[] hashTable;
+    protected int tableSize;                                // Must be prime
+    protected static final int MAX_SIZE = 2 * MAX_CAPACITY; // Max size of hash table
+    protected boolean integrityOK = false;
+    protected static final double MAX_LOAD_FACTOR = 0.5;    // Fraction of hash table that can be filled
+    protected final Entry<K, V> AVAILABLE = new Entry<>(null, null); // Occupies locations in the hash table in the available state (locations whose entries were removed)
 
     public HashedDictionary()
     {
@@ -161,7 +161,7 @@ public class HashedDictionary<K, V> implements DictionaryInterface<K, V>
         return new ValueIterator();
     } // end getValueIterator
 
-    private int getHashIndex(K key)
+    protected int getHashIndex(K key)
     {
         int hashIndex = key.hashCode() % hashTable.length;
 
@@ -178,7 +178,7 @@ public class HashedDictionary<K, V> implements DictionaryInterface<K, V>
     } // end getHashIndex
 
     // Precondition: checkIntegrity has been called.
-    private int linearProbe(int index, K key)
+    protected int linearProbe(int index, K key)
     {
         boolean found = false;
         int availableIndex = -1; // Index of first available location (from which an entry was removed)
@@ -214,7 +214,7 @@ public class HashedDictionary<K, V> implements DictionaryInterface<K, V>
     // Increases the size of the hash table to a prime >= twice its old size.
     // In doing so, this method must rehash the table entries.
     // Precondition: checkIntegrity has been called.
-    private void enlargeHashTable()
+    protected void enlargeHashTable()
     {
         Entry<K, V>[] oldTable = hashTable;
         int oldSize = hashTable.length;
@@ -239,13 +239,13 @@ public class HashedDictionary<K, V> implements DictionaryInterface<K, V>
 
     // Returns true if lambda > MAX_LOAD_FACTOR for hash table;
     // otherwise returns false.
-    private boolean isHashTableTooFull()
+    protected boolean isHashTableTooFull()
     {
         return numberOfEntries > MAX_LOAD_FACTOR * hashTable.length;
     } // end isHashTableTooFull
 
     // Returns a prime integer that is >= the given integer, but <= MAX_SIZE.
-    private int getNextPrime(int anInteger)
+    protected int getNextPrime(int anInteger)
     {
         // if even, add 1 to make odd
         if (anInteger % 2 == 0)
@@ -263,7 +263,7 @@ public class HashedDictionary<K, V> implements DictionaryInterface<K, V>
     } // end getNextPrime
 
     // Returns true if the given integer is prime.
-    private boolean isPrime(int anInteger)
+    protected boolean isPrime(int anInteger)
     {
         boolean result;
         boolean done = false;
@@ -300,7 +300,7 @@ public class HashedDictionary<K, V> implements DictionaryInterface<K, V>
     } // end isPrime
 
     // Throws an exception if this object is not initialized.
-    private void checkIntegrity()
+    protected void checkIntegrity()
     {
         if (!integrityOK)
             throw new SecurityException ("HashedDictionary object is corrupt.");
@@ -308,7 +308,7 @@ public class HashedDictionary<K, V> implements DictionaryInterface<K, V>
 
     // Ensures that the client requests a capacity
     // that is not too small or too large.
-    private int checkCapacity(int capacity)
+    protected int checkCapacity(int capacity)
     {
         if (capacity < DEFAULT_CAPACITY)
             capacity = DEFAULT_CAPACITY;
@@ -320,18 +320,18 @@ public class HashedDictionary<K, V> implements DictionaryInterface<K, V>
     } // end checkCapacity
 
     // Throws an exception if the hash table becomes too large.
-    private void checkSize(int size)
+    protected void checkSize(int size)
     {
         if (size > MAX_SIZE)
             throw new IllegalStateException("Dictionary has become too large.");
     } // end checkSize
 
-    private class KeyIterator implements Iterator<K>
+    protected class KeyIterator implements Iterator<K>
     {
-        private int currentIndex; // Current position in hash table
-        private int numberLeft;   // Number of entries left in iteration
+        protected int currentIndex; // Current position in hash table
+        protected int numberLeft;   // Number of entries left in iteration
 
-        private KeyIterator()
+        protected KeyIterator()
         {
             currentIndex = 0;
             numberLeft = numberOfEntries;
@@ -370,12 +370,12 @@ public class HashedDictionary<K, V> implements DictionaryInterface<K, V>
         } // end remove
     } // end KeyIterator
 
-    private class ValueIterator implements Iterator<V>
+    protected class ValueIterator implements Iterator<V>
     {
-        private int currentIndex;
-        private int numberLeft;
+        protected int currentIndex;
+        protected int numberLeft;
 
-        private ValueIterator()
+        protected ValueIterator()
         {
             currentIndex = 0;
             numberLeft = numberOfEntries;
@@ -416,26 +416,26 @@ public class HashedDictionary<K, V> implements DictionaryInterface<K, V>
 
     protected final class Entry<K, V>
     {
-        private K key;
-        private V value;
+        protected K key;
+        protected V value;
 
-        private Entry(K searchKey, V dataValue)
+        protected Entry(K searchKey, V dataValue)
         {
             key = searchKey;
             value = dataValue;
         } // end constructor
 
-        private K getKey()
+        protected K getKey()
         {
             return key;
         } // end getKey
 
-        private V getValue()
+        protected V getValue()
         {
             return value;
         } // end getValue
 
-        private void setValue(V newValue)
+        protected void setValue(V newValue)
         {
             value = newValue;
         } // end setValue
