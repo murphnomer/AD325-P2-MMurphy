@@ -13,13 +13,13 @@ public class HashingMain {
     public static void main(String[] args) {
         Random rnd = new Random();
         LinearProbingWithCount<String, String> lp = new LinearProbingWithCount<>();
+        DoubleHashingWithCount<String, String> dh = new DoubleHashingWithCount<>();
         populateSampleData();
-       for (int i = 0; i < 10; i++) {
-            lp.add(l1.get(rnd.nextInt(l1.size())),"");
-           System.out.println(LinearProbingWithCount.comparisons);
+        for (int i = 0; i < 10; i++) {
+            dh.add(l1.get(rnd.nextInt(l1.size())),"");
+            System.out.println(DoubleHashingWithCount.comparisons);
         }
-
-        lp.displayHashTable();
+        dh.displayHashTable();
     }
 
     public static void populateSampleData() {
