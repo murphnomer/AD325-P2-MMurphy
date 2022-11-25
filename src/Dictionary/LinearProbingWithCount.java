@@ -8,6 +8,10 @@ public class LinearProbingWithCount<K, V> extends HashedDictionary<K, V> {
         super();
     }
 
+    public LinearProbingWithCount(int capacity) {
+        super(capacity);
+    }
+
     protected int linearProbe(int index, K key)
     {
 

@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f25ea1d8-6321-42ea-87b8-2630121f3820" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/Dictionary/DictionaryInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dictionary/DoubleHashingWithCount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dictionary/HashedDictionary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dictionary/HashingMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Dictionary/LinearProbingWithCount.java" afterDir="false" />
+    <list default="true" id="f25ea1d8-6321-42ea-87b8-2630121f3820" name="Changes" comment="Added UML diagram">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dictionary/DoubleHashingWithCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dictionary/DoubleHashingWithCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dictionary/HashingMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dictionary/HashingMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Dictionary/LinearProbingWithCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dictionary/LinearProbingWithCount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,17 +33,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/elmik/IdeaProjects/AD325-P2-MMurphy/src/Dictionary"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/elmik/IdeaProjects/AD325-P2-MMurphy/src/Dictionary&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\elmik\IdeaProjects\AD325-P2-MMurphy\src\Dictionary" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\elmik\IdeaProjects\AD325-P2-MMurphy" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -56,7 +57,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1668324011118</updated>
-      <workItem from="1668324012496" duration="2323000" />
+      <workItem from="1668324012496" duration="14980000" />
+      <workItem from="1669155617985" duration="6707000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1668324198214</created>
@@ -65,7 +67,35 @@
       <option name="project" value="LOCAL" />
       <updated>1668324198214</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="structure">
+      <created>1668329222659</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668329222659</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Linear probing class updated">
+      <created>1668392578601</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668392578601</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Double Hashing class updated">
+      <created>1668397904613</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668397904613</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added UML diagram">
+      <created>1668398789598</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668398789598</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -84,6 +114,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="structure" />
+    <MESSAGE value="Linear probing class updated" />
+    <MESSAGE value="Double Hashing class updated" />
+    <MESSAGE value="Added UML diagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added UML diagram" />
   </component>
 </project>

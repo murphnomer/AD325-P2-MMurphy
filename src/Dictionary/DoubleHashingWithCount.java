@@ -7,6 +7,10 @@ public class DoubleHashingWithCount<K, V> extends HashedDictionary<K, V>{
         super();
     }
 
+    public DoubleHashingWithCount(int capacity) {
+        super(capacity);
+    }
+
     protected int getHashIndex(K key)
     {
         int hashIndex = key.hashCode() % hashTable.length;
