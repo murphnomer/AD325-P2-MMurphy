@@ -104,6 +104,12 @@ public class HashingMain {
                 "StDev Comparisons:\t" + std(dhcTot));
     }
 
+    /**
+     * Calculates the standard deviation of a list of Integers. Code adapted from here:
+     * https://gist.github.com/asela38/ed553c6908976ffc1398dd9cd83a15e6
+     * @param l List of Integers
+     * @return the standard deviation of the list
+     */
     public static double std(List<Integer> l) {
         double avg = l.stream().mapToInt(a -> a).average().getAsDouble();
         double var = l.stream().map(a -> a - avg).map(a -> a*a).mapToDouble(a -> a).average().getAsDouble();
